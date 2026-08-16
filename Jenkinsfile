@@ -11,6 +11,15 @@ pipeline{
             sh 'python3 scripts/validate.py'
         }
     }
+    stage('install Dependecies'){
+        steps{
+            sh ''' 
+                python3 -m venv venv 
+                ./venv/bin/pip install --upgrade pip 
+                ./venv/bin/pip install -r requirements.txt
+                '''
+        }
+    }
     stage('test'){
         steps{
             sh 'pytest'
