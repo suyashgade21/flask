@@ -34,7 +34,7 @@ pipeline {
             steps {
                 sh  '''
                 pwd
-                docker build -t devops-demo-api:${BUILD_NUMBER}'''
+                docker build -t devops-demo-api:${BUILD_NUMBER} .'''
             }
         }
         stage('load to minikube'){
