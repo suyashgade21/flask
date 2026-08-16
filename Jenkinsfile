@@ -32,7 +32,7 @@ pipeline {
         }
         stage('Docker build'){
             steps {
-                sh ' '''
+                sh  '''
                 pwd
                 docker build -t devops-demo-api:${BUILD_NUMBER}'''
             }
