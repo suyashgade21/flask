@@ -30,6 +30,19 @@ pipeline {
                 sh './venv/bin/pytest'
             }
         }
+        stage('Docker build'){
+            steps {
+                sh 'docker build -t devops-demo-api:${BUILD_NUMBER}'
+            }
+        }
+        stage('load to minikube'){
+            steps{
+                sh 'minikube image load devops-demo-api:${BUILD_NUMBER}'
+            }
+
+
+        }
+       
     }
 
     post {
