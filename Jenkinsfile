@@ -51,7 +51,7 @@ pipeline {
         }
         stage('minikube url '){
             steps{
-                sh 'minikube service devops-demo-api -n devops-demo --url '
+                sh 'minikube service devops-demo-api -n devops-demo --url'
             }
         }
        
