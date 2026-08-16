@@ -44,6 +44,16 @@ pipeline {
 
 
         }
+        stage('deployment'){
+            steps{
+                sh 'kubectl apply -f k8s'
+            }
+        }
+        stage('minikube url '){
+            steps{
+                sh 'minikube svc devops-demo-api -n devops-demo --url '
+            }
+        }
        
     }
 
