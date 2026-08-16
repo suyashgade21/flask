@@ -1,6 +1,7 @@
 pipeline{
     agent any
-    stages('checkout scm') {
+    stages {
+        stages('checkout scm') {
         steps {
             checkout scm
         }
@@ -24,4 +25,6 @@ post {
     failure{
         echo 'CI pipeline failed !'
     }
-}
+} }
+
+    
